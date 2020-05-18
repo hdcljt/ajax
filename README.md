@@ -1,5 +1,11 @@
 # ajax
 
+[![Build](https://travis-ci.org/hdcljt/ajax.svg?branch=master)](https://travis-ci.org/hdcljt/ajax)
+[![Coverage](https://coveralls.io/repos/github/hdcljt/ajax/badge.svg?branch=master)](https://coveralls.io/github/hdcljt/ajax?branch=master)
+[![Version](https://img.shields.io/github/package-json/v/hdcljt/ajax)](https://www.npmjs.com/package/@hudc/ajax)
+[![License](https://img.shields.io/github/license/hdcljt/ajax)](LICENSE)
+[![Types](https://img.shields.io/npm/types/@hudc/ajax)](lib/index.d.ts)
+
 浏览器端的 Ajax 库，支持 Promise，拦截器，批量取消，对象字符串化
 
 ## 安装

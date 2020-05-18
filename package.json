@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "浏览器端的 Ajax 库，支持 TS，拦截器，批量取消，对象字符串化等",
   "main": "lib/ajax.min.js",
-  "types": "lib/index.d.ts",
+  "types": "lib/ajax.d.ts",
   "files": [
     "lib"
   ],
