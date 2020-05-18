@@ -1,0 +1,65 @@
+{
+  "name": "@hudc/ajax",
+  "version": "1.0.0",
+  "description": "浏览器端的 Ajax 库，支持 TS，拦截器，批量取消，对象字符串化等",
+  "main": "lib/ajax.min.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "prettier --parser typescript --check \"{src,utils}/*.ts\"",
+    "fix": "prettier --parser typescript --write \"{src,utils}/*.ts\"",
+    "test": "jest --silent",
+    "coverage": "jest --coverage --silent",
+    "coveralls": "jest --coverage --silent && coveralls < coverage/lcov.info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdcljt/ajax.git"
+  },
+  "keywords": [
+    "ajax",
+    "xhr",
+    "http",
+    "promise",
+    "typescript",
+    "request",
+    "cancel"
+  ],
+  "author": "hudc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdcljt/ajax/issues"
+  },
+  "homepage": "https://github.com/hdcljt/ajax#readme",
+  "jest": {
+    "preset": "ts-jest"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "arrowParens": "avoid",
+    "trailingComma": "none"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run fix"
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.2",
+    "@types/qs": "^6.9.2",
+    "coveralls": "^3.1.0",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "qs": "^6.9.4",
+    "rollup": "^2.10.2",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-typescript2": "^0.27.1",
+    "ts-jest": "^25.5.1",
+    "typescript": "^3.9.2"
+  }
+}

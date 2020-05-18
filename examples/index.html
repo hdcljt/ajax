@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="get">GET请求</button>
+  <button id="post">POST请求</button>
+  <button id="put">PUT请求</button>
+  <button id="patch">PATCH请求</button>
+  <button id="delete">DELETE请求</button>
+  <button id="req-get">GET请求（request）</button>
+  <button id="req-post">POST请求（request）</button>
+  <button id="req-cancel1">Cancel请求（准备）</button>
+  <button id="req-cancel2">Cancel请求（取消）</button>
+  <script type="module">
+    import ajax, { request, cancel } from '../lib/ajax.min.js'
+    document.getElementById('get').addEventListener('click', () => {
+      ajax('https://jsonplaceholder.typicode.com/posts/1').then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('post').addEventListener('click', () => {
+      ajax({ url: 'https://jsonplaceholder.typicode.com/posts', method: 'post' }).then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('put').addEventListener('click', () => {
+      ajax({ url: 'https://jsonplaceholder.typicode.com/posts/1', method: 'put' }).then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('patch').addEventListener('click', () => {
+      ajax({ url: 'https://jsonplaceholder.typicode.com/posts/1', method: 'patch' }).then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('delete').addEventListener('click', () => {
+      ajax({ url: 'https://jsonplaceholder.typicode.com/posts/1', method: 'delete' }).then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('req-get').addEventListener('click', () => {
+      request({ url: 'https://jsonplaceholder.typicode.com/posts/1', method: 'get', responseType: 'json' }).then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('req-post').addEventListener('click', () => {
+      request({ url: 'https://jsonplaceholder.typicode.com/posts', method: 'post', responseType: 'json' }).then(res => {
+        console.log('res', res)
+      })
+    })
+    document.getElementById('req-cancel1').addEventListener('click', () => {
+      request({ url: 'https://jsonplaceholder.typicode.com/posts/1', signal: 'c' }).then(res => {
+        console.log('res', res)
+      }).catch(err => console.log('isCancel', err.isCancel))
+    })
+    document.getElementById('req-cancel2').addEventListener('click', () => {
+      cancel('c')
+    })
+  </script>
+</body>
+
+</html>
