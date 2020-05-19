@@ -65,13 +65,7 @@ export default function request({
       xhr.upload.onprogress = onUploadProgress
     }
 
-    setRequest(
-      xhr,
-      headers as XHRRequestHeaders,
-      responseType,
-      timeout,
-      withCredentials
-    )
+    setRequest(xhr, headers, responseType, timeout, withCredentials)
 
     xhr.send(body || null)
   })

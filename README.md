@@ -4,7 +4,7 @@
 [![Coverage](https://coveralls.io/repos/github/hdcljt/ajax/badge.svg?branch=master)](https://coveralls.io/github/hdcljt/ajax?branch=master)
 [![Version](https://img.shields.io/github/package-json/v/hdcljt/ajax)](https://www.npmjs.com/package/@hudc/ajax)
 [![License](https://img.shields.io/github/license/hdcljt/ajax)](LICENSE)
-[![Types](https://img.shields.io/npm/types/@hudc/ajax)](lib/index.d.ts)
+[![Types](https://img.shields.io/npm/types/@hudc/ajax)](lib/ajax.d.ts)
 
 浏览器端的 Ajax 库，支持 Promise，拦截器，批量取消，对象字符串化
 
@@ -155,9 +155,7 @@ interface XHRInterceptor {
     | ((options: AjaxOptions) => AjaxOptions)
     | ((options: AjaxOptions) => AjaxOptions)[]
   /** 成功拦截器 */
-  response?:
-    | ((response: any) => any)
-    | ((response: any) => any)[]
+  response?: ((response: any) => any) | ((response: any) => any)[]
   /** 失败拦截器 */
   error?:
     | ((error: XHRErrorInfo) => XHRErrorInfo)
@@ -229,8 +227,8 @@ interceptor.error = [
 const defaults: AjaxRequiredOptions = {
   url: '',
   method: 'get',
-  params: '', // user/:params
-  query: '', // user?query
+  params: '', // api/:params
+  query: '', // api?query
   body: null,
   baseURL: '',
   headers: {
@@ -336,6 +334,6 @@ stringify({ a: 1, b: ['x', { c: 'y' }] }, 'indices')
 
 ## 参考
 
-- [Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
-- [axios](https://www.npmjs.com/package/axios)
-- [qs](https://www.npmjs.com/package/qs)
+- [Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest 'https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest')
+- [axios](https://www.npmjs.com/package/axios 'https://www.npmjs.com/package/axios')
+- [qs](https://www.npmjs.com/package/qs 'https://www.npmjs.com/package/qs')
